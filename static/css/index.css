@@ -133,5 +133,20 @@ body {
   font-size: smaller;
 }
 
+.video-compare-container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+}
 
+.videoMerge {
+  max-width: 100%; 
+  height: auto; 
+  display: block;
+}
+
+.video {
+  display: none;
+}
 
