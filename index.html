@@ -26,8 +26,7 @@
 
   <title>RoboGSim</title>
   <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -93,7 +92,8 @@
                     <span class="author-block"><sup>2</sup>Institute of Computing Technology, Chinese Academy of Sciences</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
                     <span class="eql-cntrb"><small><sup>†</sup>Project Lead</small></span>
-                    <span class="eql-cntrb"><small><sup>‡</sup>Corresponding Author</small></span>
+                    <span class="eql-cntrb"><small><sup>‡</sup>Corresponding Author</small></span><br>
+                    <span class="eql-cntrb"><small>lixinhai a/t stu.hit.edu.cn {lijialin24s, wangruiping} a/t ict.ac.cn <br> {zhangziheng, wangtiancai} a/t megvii.com kktseng a/t hit.edu.cn</small></span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -166,7 +166,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+      <video poster="" id="main" autoplay controls muted loop height="100%">
         <source src="static/videos/blog_main_720p.mp4"
         type="video/mp4">
       </video>
@@ -222,31 +222,38 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="video-compare-container" id="seq25_compare_videoDiv" style="display: inline;">
-        <video class="video" id="seq25_compare_video" loop="" playsinline="" autoplay="" muted="" src="static/videos/seq_25_combine.mp4" onplay="resizeAndPlay(this)" style="height: 0px;">
-        </video>
-        <canvas height="1072" class="videoMerge" id="seq25_compare_videoMerge" width="1600"></canvas>
-      </div>
-    </div>
-  </div>
-</section> -->
-
-<!-- Teaser image-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/exp1.png" alt="MY ALT TEXT"/>
-      <!-- <h1 class="subtitle has-text-centered"> -->
+      <!-- 视频容器 -->
+      <div class="video-compare-container" style="display: flex; justify-content: space-between; align-items: center;">
+        
+        <!-- 第一段视频 -->
+        <div class="video-container" style=" margin-right: 5px;">
+          <video class="video" id="render_gt_compare_video" loop playsinline autoplay muted src="static/videos/render_gt.mp4" onplay="resizeAndPlay(this)" style="width: 100%; max-width: 640px; height: auto;">
+          </video>
+          <canvas class="videoMerge" id="render_gt_compare_videoMerge" width="1344" height="672"></canvas>
+        </div>
+
+        <!-- 第二段视频 -->
+        <div class="video-container">
+          <video class="video" id="render_depth_compare_video" loop playsinline autoplay muted src="static/videos/render_depth.mp4" onplay="resizeAndPlay(this)" style="width: 100%; max-width: 640px; height: auto;">
+          </video>
+          <canvas class="videoMerge" id="render_depth_compare_videoMerge" width="1344" height="672"></canvas>
+        </div>
+
+      </div>
+
+      <!-- 描述文字 -->
+      <div class="description" style="margin-top: 20px; text-align: left;">
         <b>Real2Sim Novel Pose Synthesis:</b>
- "Real" represents the capture of the real robotic arm from a new viewpoint. "RoboGSim" shows the rendering of the novel pose from the new viewpoint driven by the real recorded trajectory. "Depth" shows the rendering depth by GS. "Diff" is the difference calculated between the Real and the rendered RGB images. We compute the pixel distance of the same point between the Real and RoboGSim, which is 7.37.
-      <!-- </h1> -->
+        <p>"Real" represents the capture of the real robotic arm from a new viewpoint. "RoboGSim" shows the rendering of the novel pose from the new viewpoint driven by the real recorded trajectory. "Depth" shows the rendering depth by GS. "Diff" is the difference calculated between the Real and the rendered RGB images. We compute the pixel distance of the same point between the Real and RoboGSim, which is 7.37.</p>
+      </div>
+
     </div>
   </div>
 </section>
-<!-- End teaser image -->
+
 
 
 <section class="section" id="exp2">
@@ -255,18 +262,41 @@
   </div>
 </section>
 
-<!-- Teaser image-->
+
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/exp2.png" alt="MY ALT TEXT"/>
-      <!-- <h1 class="subtitle has-text-centered"> -->
+      <!-- 视频容器 -->
+      <div class="video-compare-container" style="display: flex; justify-content: space-between; align-items: center;">
+        
+        <!-- 第一段视频 -->
+        <div class="video-container" style="margin-right: 10px; flex: 1;">
+          <video class="video" id="exp2_render_gt_compare_video" loop playsinline autoplay muted 
+            src="static/videos/exp2_render_gt.mp4" 
+            onplay="resizeAndPlay(this)" 
+            style="width: 100%; height: 100%; object-fit: cover;">
+          </video>
+          <canvas class="videoMerge" id="exp2_render_gt_compare_videoMerge" width="1344" height="672"></canvas>
+        </div>
+
+        <!-- 第二段视频 -->
+        <div class="video-container" style="flex: 1;margin-top: 30px;">
+          <video poster="" id="sim" playsinline autoplay muted loop 
+            style="width: 100%; height: 100%; object-fit: cover;">
+            <source src="static/videos/exp2_sim.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+
+      <!-- 描述文字 -->
+      <div class="description" style="margin-top: 20px; text-align: left;">
         <b>Sim2Real Trajectory Replay:</b>
-        The "Sim" row displays the video sequence collected from Isaac Sim. "Real" represents the demonstration driven by the trajectory in simulation. "RoboGSim" is the GS rendering result driven by the same trajectory. "Diff" indicates the differences between Real and the rendered results.      <!-- </h1> -->
+        <p>The "Sim" row displays the video sequence collected from Isaac Sim. "Real" represents the demonstration driven by the trajectory in simulation. "RoboGSim" is the GS rendering result driven by the same trajectory. "Diff" indicates the differences between Real and the rendered results.</p>
+      </div>
     </div>
   </div>
 </section>
-<!-- End teaser image -->
 
 
 
@@ -329,6 +359,14 @@
   </div>
 </section>
 <!-- End teaser image -->
+
+
+<section class="section" id="intern">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Internship Application</h2>
+    We are recruiting interns in the fields of Embodied Intelligence, Agent, 3DGS, etc. Feel free to apply zhangziheng a/t megvii.com
+  </div>
+</section>
 
 
 <!-- Image carousel -->
